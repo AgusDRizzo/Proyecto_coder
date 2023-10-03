@@ -3,7 +3,7 @@ from django.template import Template, Context, loader
 from django.http import HttpResponse
 from inicio.forms import UsuarioFormulario
 from inicio.models import Usuario
-
+from inicio.forms import BusquedaFormulario
 # Create your views here.
 
 def inicio(request):
@@ -16,7 +16,18 @@ def inicio(request):
 def cuestionario(request):
     if request.method == "POST":
            usuario = Usuario(nombre = request.POST.get("nombre"), email = request.POST.get("email"), comentario = request.POST.get("comentario") )
+           usuario.save()
            return render(request, r"inicio\index.html")
     
     formulario = UsuarioFormulario()
     return render(request, r"inicio\cuestionario.html", {"formulario":formulario})
+
+def busqueda(request):
+    formulario = BusquedaFormulario(request.GET)
+    if formulario.is_valid():
+        nombre_data = formulario.cleaned_data.get("nombre")
+        email_encontrado = Usuario.objects.all()
+    
+        
+    formulario = BusquedaFormulario()
+    return render(request, r"inicio\busqueda.html", {"formulario":formulario, "email_encontrado":email_encontrado})

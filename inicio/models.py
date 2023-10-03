@@ -5,6 +5,6 @@ class Usuario(models.Model):
     comentario = models.TextField()
     
     def __str__(self):
-        return f"{self.nombre}"
+        return f"nombre = {self.nombre}, email = {self.email}, comentario = {self.comentario}"
     
 # Create your models here.
