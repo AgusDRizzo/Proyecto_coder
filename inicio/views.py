@@ -26,8 +26,9 @@ def busqueda(request):
     formulario = BusquedaFormulario(request.GET)
     if formulario.is_valid():
         nombre_data = formulario.cleaned_data.get("nombre")
-        email_encontrado = Usuario.objects.all()
-    
+        usuario_encontrado = Usuario.objects.filter(nombre__icontains = nombre_data)
+    else:
+        usuario_encontrado = Usuario.objects.all()
         
     formulario = BusquedaFormulario()
-    return render(request, r"inicio\busqueda.html", {"formulario":formulario, "email_encontrado":email_encontrado})
+    return render(request, r"inicio\busqueda.html", {"formulario":formulario, "usurio_encontrado":usuario_encontrado})

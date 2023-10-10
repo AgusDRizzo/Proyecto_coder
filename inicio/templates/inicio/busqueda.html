@@ -4,11 +4,19 @@
 {% endblock h1_header %}
 {% block boton %}{% endblock boton %}
 {% block main_content %}
-<form action="" method =>
-    <table>
+<form action="" >
+    
     {{formulario.as_table}}
-    </table>
     <input type="submit" value="Buscar">
+    {{usuario_encontrado}}
 </form> 
+<ul>
+    {% for usuario in usuario_encontrado %}
+        <li>{{usuario}}</li>
+    {% endfor %}
+</ul>
+
+
+
 {% endblock main_content %}
 {% block buscar %}{% endblock buscar %}
