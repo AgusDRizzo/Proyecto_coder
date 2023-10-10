@@ -8,13 +8,16 @@
     
     {{formulario.as_table}}
     <input type="submit" value="Buscar">
-    {{usuario_encontrado}}
+    
 </form> 
-<ul>
+<body>
     {% for usuario in usuario_encontrado %}
-        <li>{{usuario}}</li>
+    <li>
+        {{usuario}}
+    </li>
+
     {% endfor %}
-</ul>
+</body>
 
 
 

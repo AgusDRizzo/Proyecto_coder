@@ -31,4 +31,4 @@ def busqueda(request):
         usuario_encontrado = Usuario.objects.all()
         
     formulario = BusquedaFormulario()
-    return render(request, r"inicio\busqueda.html", {"formulario":formulario, "usurio_encontrado":usuario_encontrado})
+    return render(request, r"inicio\busqueda.html", {"formulario":formulario, "usuario_encontrado":usuario_encontrado})
