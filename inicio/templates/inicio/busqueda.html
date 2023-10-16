@@ -11,12 +11,17 @@
     
 </form> 
 <body>
+    {% if usuario_encontrado %}
     {% for usuario in usuario_encontrado %}
     <li>
-        {{usuario}}
+        {{usuario}}  || <a class="navbar-brand" href= {% url "editar" usuario.id %}>Editar</a> <a class="navbar-brand" href= {% url "eliminar" usuario.id %}>Eliminar</a>
     </li>
 
     {% endfor %}
+    
+    {% else %}
+        <p>No se encontró el usuario</p>
+    {% endif %}
 </body>
 
 

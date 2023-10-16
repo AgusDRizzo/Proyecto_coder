@@ -7,3 +7,8 @@ class UsuarioFormulario(forms.Form):
 
 class BusquedaFormulario(forms.Form):
      nombre = forms.CharField(max_length= 50, required = False)
+
+class EditarUsuarioFormulario(forms.Form):
+    nombre = forms.CharField(max_length= 50)
+    email = forms.CharField(max_length= 30)
+    comentario = forms.CharField()

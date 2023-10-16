@@ -1,0 +1,29 @@
+{% extends "compartidos/base.html" %}
+{% block title %}<title>Busqueda</title>{% endblock title %}
+{% block h1_header %}
+{% endblock h1_header %}
+{% block boton %}{% endblock boton %}
+{% block main_content %}
+{% block boton_inicio %}
+ <a class="navbar-brand" href="crear">crear paleta</a>
+                        
+{% endblock boton_inicio %}
+
+<body>
+    {% if listado_paletas %}
+    {% for paleta in listado_paletas %}
+    <li>
+        {{paleta}}  || <a class="navbar-brand" href= {% url "paleta_editar" paleta.id %}>Editar</a> <a class="navbar-brand" href= {% url "paleta_eliminar" paleta.id %}>Eliminar</a>
+    </li>
+
+    {% endfor %}
+    
+    {% else %}
+        <p>No se encontró la paleta</p>
+    {% endif %}
+</body>
+
+
+
+{% endblock main_content %}
+{% block buscar %}{% endblock buscar %}
