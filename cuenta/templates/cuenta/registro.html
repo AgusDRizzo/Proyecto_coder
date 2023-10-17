@@ -1,0 +1,18 @@
+{% extends "compartidos/base.html" %}
+{% block title %}<title>registrarse</title>{% endblock title %}
+{% block h1_header %}
+Resgistrarse
+{% endblock h1_header %}
+{% block boton %}
+{% endblock boton %}
+
+{% block main_content %}
+<form action="{% url "registro" %}" method ="POST">
+    {% csrf_token %}
+    <table>
+    {{formulario}}
+    </table>
+    <input type="submit" value="registrarse">
+</form> 
+{% endblock main_content %}
+{% block buscar %}{% endblock buscar %}
