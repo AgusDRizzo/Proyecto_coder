@@ -9,8 +9,9 @@ class Libro(models.Model):
     autor =  models.CharField(max_length=30)
     frase = RichTextField()
     fecha = models.DateField(auto_now=True)
+    imagen = models.ImageField(upload_to="libros", null=True, blank=True)
                                  
     def __str__(self):
-        return f"Título: {self.titulo}:\n Autor:{self.autor}\n Frase: {self.frase}\n Fecha:{self.fecha}"
+        return f" {self.frase}\n {self.titulo} de {self.autor}\n || Publicado:{self.fecha} por "
     
 # Create your models here 

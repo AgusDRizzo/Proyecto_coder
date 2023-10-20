@@ -5,7 +5,7 @@ Imprimí tu huella
 {% endblock h1_header %}
 {% block boton %}{% endblock boton %}
 {% block main_content %}
-<form action="/cuestionario" method ="POST">
+<form action="/cuestionario" method ="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
     {{form}}

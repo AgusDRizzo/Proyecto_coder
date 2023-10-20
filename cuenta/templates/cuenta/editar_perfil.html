@@ -7,7 +7,7 @@ Editar perfil
 {% endblock boton %}
 
 {% block main_content %}
-<form action="{% url "editar_perfil" %}" method ="POST">
+<form action="{% url "editar_perfil" %}" method ="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
     {{formulario}}

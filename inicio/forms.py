@@ -6,6 +6,7 @@ class LibroFormulario(forms.Form):
     autor = forms.CharField(max_length= 30)
     frase = RichTextField()
     fecha = forms.DateField()
+    imagen = forms.ImageField(required=False)
 
 class BusquedaFormulario(forms.Form):
      titulo = forms.CharField(max_length= 50, required = False)

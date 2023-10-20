@@ -1,11 +1,18 @@
 {% extends "compartidos/base.html" %}
 {% block title %}<title>Editar</title>{% endblock title %}
 {% block h1_header %} 
-
+{% if libro.imagen %}
+<img src={{libro.imagen.url}} alt="" height="500px">
+{% endif %}
 {% endblock h1_header %}
 {% block boton %}{% endblock boton %}
 {% block main_content %}
+
+
+
+
 <body>
+
  {{libro | safe}}   
 </body>
 {% endblock main_content %}

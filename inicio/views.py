@@ -10,6 +10,7 @@ from django.urls import reverse_lazy
 from inicio.forms import BusquedaFormulario
 from django.views.generic import DetailView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 @login_required
 def inicio(request):
@@ -34,16 +35,16 @@ def busqueda(request):
     formulario = BusquedaFormulario()
     return render(request, r"inicio\busqueda.html", {"formulario":formulario, "libro_encontrado":libro_encontrado})
 
-class LibroCreateView(CreateView):
+class LibroCreateView(LoginRequiredMixin, CreateView):
     model = Libro
     template_name = "inicio/cuestionario.html"
-    fields = ["titulo", "autor", "frase"]
+    fields = ["titulo", "autor", "frase", "imagen"]
     success_url = reverse_lazy("inicio")
     
-class LibroUpdateView(UpdateView):
+class LibroUpdateView(LoginRequiredMixin, UpdateView):
     model = Libro
     template_name = "inicio/editar_libro.html"
-    fields = ["titulo", "autor", "frase"]
+    fields = ["titulo", "autor", "frase", "imagen"]
     success_url = reverse_lazy("busqueda")
 
 
@@ -57,6 +58,8 @@ class ObjetoDetailView(DetailView):
     template_name = "inicio/objeto.html"
     pk_url_kwarg = "Libro_pk"
     
+def quien_soy(request):
+    return render(request, r"inicio\quien_soy.html")
 #class PaletaDetailView(DetailView):
  #   model = paleta
   #  template_name = "nueva/detalle_paleta.html"

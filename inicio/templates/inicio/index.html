@@ -13,11 +13,21 @@ Bienvenidos
 {% block boton_inicio %}
                         
                         {% if request.user.is_authenticated %}
+                        <a class="navbar-brand" href={% url "quien_soy" %}>Acerca de mí</a>
                         <a class="navbar-brand" href="cuenta/logout">Logout</a>
                         <a class="navbar-brand" href="cuenta/perfil/mi_perfil">{{request.user.username}}</a>
                         {% else  %}
+                        <a class="navbar-brand" href="/quien_soy">Acerca de mí</a>
                         <a class="navbar-brand" href="cuenta/login">Login</a>
                         <a class="navbar-brand" href="cuenta/registro">Registrarse</a>
+
+                        
                         {% endif %}
-                        <a class="navbar-brand" href="/editar"></a>
+                        {% if  request.user.infoextra.avatar%}
+                        <img src={{request.user.infoextra.avatar.url}} alt="" height="50px">
+                        {% endif %}
+                        
+                        
+                        
+                       
 {% endblock boton_inicio %}
