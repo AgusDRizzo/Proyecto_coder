@@ -23,7 +23,7 @@
             <div class="container px-4 px-lg-5">
                 
                         
-                {% block boton_inicio %}<a class="navbar-brand" href="/">Volver al inicio</a>{% endblock boton_inicio %}
+                {% block boton_inicio %}<a class="navbar-brand" href="/portada">Volver al inicio</a>{% endblock boton_inicio %}
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -44,7 +44,10 @@
                     <div class="text-center">
                         <h1 class="mx-auto my-0 text-uppercase"> {% block h1_header  %} Template Base {% endblock h1_header %}</h1>
                         {% block boton %}<h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
-                        <a class="btn btn-primary" href="/cuestionario">Iniciar el viaje</a> {% endblock boton %}
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
+                        <a class="btn btn-primary" href="/cuestionario">Dejá tu huella</a> 
+                        <a class="btn btn-primary" href="/cuestionario">Inspirate</a>
+                        {% endblock boton %}
                     </div>
                 </div>
             </div>

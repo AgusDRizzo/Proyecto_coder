@@ -7,7 +7,8 @@
 <form action="/cuestionario" method ="POST">
     {% csrf_token %}
     <table>
-    {{formulario.as_table}}
+    {{form}}
+    {{form.media}}
     </table>
     <input type="submit" value="Enviar">
 </form> 
