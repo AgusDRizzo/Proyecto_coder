@@ -1,6 +1,7 @@
 {% extends "compartidos/base.html" %}
 {% block title %}<title>Busqueda</title>{% endblock title %}
-{% block h1_header %}
+{% block h1_header %} 
+Encontrá la inspiración
 {% endblock h1_header %}
 {% block boton %}{% endblock boton %}
 {% block main_content %}
@@ -14,7 +15,7 @@
     {% if libro_encontrado %}
     {% for libro in libro_encontrado %}
     <li>
-       <a href={% url "objeto" libro.id %} {{libro | safe}} ></a>    <a class="navbar-brand" href= {% url "editar_libro" libro.id %}>Editar</a> <a class="navbar-brand" href= {% url "eliminar_libro" libro.id %}>Eliminar</a>
+       <a href={% url "objeto" libro.id %} {{libro| safe}} ></a>    <a class="navbar-brand" href= {% url "editar_libro" libro.id %}>Editar</a> <a class="navbar-brand" href= {% url "eliminar_libro" libro.id %}>Eliminar</a>
     </li>
 
     {% endfor %}

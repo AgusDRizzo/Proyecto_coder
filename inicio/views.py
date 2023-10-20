@@ -9,7 +9,9 @@ from inicio.models import Libro
 from django.urls import reverse_lazy
 from inicio.forms import BusquedaFormulario
 from django.views.generic import DetailView
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def inicio(request):
     #template = loader.get_template(r"inicio\index.html")
     #template_renderizado = template.render()
@@ -20,6 +22,7 @@ def inicio(request):
 def portada(request):
     return render(request, r"inicio\portada.html")
 
+@login_required
 def busqueda(request):
     formulario = BusquedaFormulario(request.GET)
     if formulario.is_valid():

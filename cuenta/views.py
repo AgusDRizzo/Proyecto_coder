@@ -33,7 +33,7 @@ def editar_perfil(request):
     if request.method == "POST":
         formulario = EditarPerfilFormulario(request.POST, instance=request.user)
         if formulario.is_valid():
-               if formulario.cleaned_data.get("avatar"):
+               #if formulario.cleaned_data.get("avatar"):
                      #info_extra.avatar = formulario.cleaned_data.get("avatar")
                      #info_extra.save()
                      formulario.save()
@@ -46,4 +46,6 @@ class editar_pass(PasswordChangeView):
     template_name = "cuenta/editar_pass.html"
     success_url = reverse_lazy("editar_perfil")
     
+def mi_perfil(request):
+    return render(request,"cuenta/mi_perfil.html" )
 # Create your views here.

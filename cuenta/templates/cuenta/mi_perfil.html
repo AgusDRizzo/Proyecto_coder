@@ -1,0 +1,19 @@
+{% extends "compartidos/base.html" %}
+{% block title %}<title>perfil</title>{% endblock title %}
+{% block h1_header %}
+Tu perfil
+{% endblock h1_header %}
+{% block boton %}
+{% endblock boton %}
+
+{% block main_content %}
+
+    
+    <body>
+    {{request.user.username}} || {{request.user.first_name}} || {{request.user.last_name}} || {{request.user.email}}
+    <a href="{% url "editar_perfil" %}">Editar perfil</a>
+    </body>    
+ 
+
+{% endblock main_content %}
+{% block buscar %}{% endblock buscar %}

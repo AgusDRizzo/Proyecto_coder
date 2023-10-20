@@ -2,7 +2,7 @@
 <html lang="en">
 {% load static %}
     <head>
-        {% block title %}<title>Template base</title>{% endblock title %}
+        {% block title %}<title></title>{% endblock title %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -42,7 +42,7 @@
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase"> {% block h1_header  %} Template Base {% endblock h1_header %}</h1>
+                        <h1 class="mx-auto my-0 text-uppercase"> {% block h1_header  %}  {% endblock h1_header %}</h1>
                         {% block boton %}<h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
                         <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
                         <a class="btn btn-primary" href="/cuestionario">Dejá tu huella</a> 
@@ -53,7 +53,7 @@
             </div>
         </header>
         <main>
-            {% block main_content %} Template Base {% endblock main_content %}
+            {% block main_content %}  {% endblock main_content %}
         </main>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2023</div></footer>

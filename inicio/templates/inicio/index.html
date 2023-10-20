@@ -14,7 +14,7 @@ Bienvenidos
                         
                         {% if request.user.is_authenticated %}
                         <a class="navbar-brand" href="cuenta/logout">Logout</a>
-                        <a class="navbar-brand" href="cuenta/perfil/editar">{{request.user.username}}</a>
+                        <a class="navbar-brand" href="cuenta/perfil/mi_perfil">{{request.user.username}}</a>
                         {% else  %}
                         <a class="navbar-brand" href="cuenta/login">Login</a>
                         <a class="navbar-brand" href="cuenta/registro">Registrarse</a>
