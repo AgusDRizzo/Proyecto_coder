@@ -4,6 +4,8 @@ from django.urls import path
 from inicio import views
 from inicio.views import inicio
 from inicio.views import portada
+from inicio.views import busqueda
+
 
 #from inicio.views import busqueda
 #from inicio.views import editar_usuario, eliminar_usuario
@@ -11,8 +13,9 @@ from inicio.views import portada
 urlpatterns = [
     path('inicio', inicio, name="inicio"),
     path("cuestionario", views.LibroCreateView.as_view(), name="cuestionario"),    
-    path("", portada, name="portada")
-    #path("busqueda", busqueda, name="busqueda"),
-    #path("<int:id_usuario>/editar", editar_usuario, name="editar"),
-     #path("<int:id_usuario>/eliminar", eliminar_usuario, name="eliminar")
+    path("", portada, name="portada"),
+    path("busqueda", busqueda, name="busqueda"),
+    path("<int:pk>/editar", views.LibroUpdateView.as_view(), name="editar_libro"),
+     path("<int:pk>/eliminar", views.LibroDeleteView.as_view(), name="eliminar_libro"), 
+     path("<Libro_pk>/objeto", views.ObjetoDetailView.as_view(), name="objeto" )
 ]

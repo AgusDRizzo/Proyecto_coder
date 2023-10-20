@@ -4,6 +4,12 @@
 {% block h1_header %} 
 Bienvenidos
 {% endblock h1_header %}
+{% block boton %}
+<h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
+<a class="btn btn-primary" href="/cuestionario">Dejá tu huella</a> 
+<a class="btn btn-primary" href="/busqueda">Inspirate</a>
+{% endblock boton %}
+
 {% block boton_inicio %}
                         
                         {% if request.user.is_authenticated %}

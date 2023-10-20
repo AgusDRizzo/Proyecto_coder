@@ -1,0 +1,16 @@
+{% extends "compartidos/base.html" %}
+{% block title %}<title>Editar</title>{% endblock title %}
+{% block h1_header %}
+{% endblock h1_header %}
+{% block boton %}{% endblock boton %}
+{% block main_content %}
+<form action="{% url "editar_libro" libro.id %}" method ="POST">
+    {% csrf_token %}
+    <table>
+    {{form}}
+    {{form.media}}
+    </table>
+    <input type="submit" value="Editar">
+</form> 
+{% endblock main_content %}
+{% block buscar %}{% endblock buscar %}

@@ -11,16 +11,16 @@
     
 </form> 
 <body>
-    {% if usuario_encontrado %}
-    {% for usuario in usuario_encontrado %}
+    {% if libro_encontrado %}
+    {% for libro in libro_encontrado %}
     <li>
-        {{usuario}}  || <a class="navbar-brand" href= {% url "editar" usuario.id %}>Editar</a> <a class="navbar-brand" href= {% url "eliminar" usuario.id %}>Eliminar</a>
+       <a href={% url "objeto" libro.id %} {{libro | safe}} ></a>    <a class="navbar-brand" href= {% url "editar_libro" libro.id %}>Editar</a> <a class="navbar-brand" href= {% url "eliminar_libro" libro.id %}>Eliminar</a>
     </li>
 
     {% endfor %}
     
     {% else %}
-        <p>No se encontró el usuario</p>
+        <p>No se encontró el libro</p>
     {% endif %}
 </body>
 

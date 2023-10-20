@@ -1,0 +1,15 @@
+{% extends "compartidos/base.html" %}
+{% block title %}<title>Eliminar</title>{% endblock title %}
+{% block h1_header %}
+{% endblock h1_header %}
+{% block boton %}
+{% endblock boton %}
+
+{% block main_content %}
+<form action="{% url "eliminar_libro" libro.id %}" method ="POST">
+    {% csrf_token %}
+    <p>¿Quiere eliminar la frase del libro: "{{libro.titulo}}"? ?</p>
+    <input type="submit" value="Eliminar">
+</form> 
+{% endblock main_content %}
+{% block buscar %}{% endblock buscar %}

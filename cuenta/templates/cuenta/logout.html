@@ -1,5 +1,8 @@
 {% extends "compartidos/base.html" %}
 {% block title %}<title>logout</title>{% endblock title %}
+{% block boton_inicio %}
+<a class="navbar-brand" href={% url "portada" %}>Volver al inicio</a>
+{% endblock boton_inicio %}
 {% block h1_header %}
 Logout
 {% endblock h1_header %}
